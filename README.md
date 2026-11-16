@@ -1,16 +1,16 @@
-# Övning 2 – Databas med studenter
+# Exercise 2 – Student Database
 
-## Beskrivning
-I denna övning skapar vi en databas med en tabell som heter `student`. Tabellen innehåller information om studenter, såsom ID, förnamn, efternamn och kommentarer.
+## Description
+In this exercise, we create a database with a table called `student`. The table stores information about students, including their ID, first name, last name, and comments.
 
-## 1. Skapa databasen
+## 1. Create the Database
 
 ```sql
 CREATE DATABASE studenter;
 USE studenter;
 ```
 
-## 2. Skapa tabellen student
+## 2. Create the Student Table
 
 ```sql
 CREATE TABLE student (
@@ -21,54 +21,54 @@ CREATE TABLE student (
 );
 ```
 
-### Tabellstruktur
+### Table Structure
 
-| Kolumn | Datatyp | NULL | Nyckel |
-|--------|---------|------|--------|
-| sid | INT | Nej | PRIMARY KEY |
-| fname | VARCHAR(20) | Nej | Nej |
-| lname | VARCHAR(20) | Nej | Nej |
-| comment | TEXT | Ja | Nej |
+| Column | Data Type | Allows NULL | Key |
+|--------|-----------|-------------|-----|
+| sid | INT | No | PRIMARY KEY |
+| fname | VARCHAR(20) | No | No |
+| lname | VARCHAR(20) | No | No |
+| comment | TEXT | Yes | No |
 
-## 3. Lägg till minst 3 studenter
+## 3. Insert at Least 3 Students
 
 ```sql
 INSERT INTO student (sid, fname, lname, comment)
 VALUES
-(1, 'Ali', 'Ahmed', 'Bra student'),
-(2, 'Sara', 'Karlsson', 'Gillar programmering'),
+(1, 'Ali', 'Ahmed', 'Good student'),
+(2, 'Sara', 'Karlsson', 'Enjoys programming'),
 (3, 'Erik', 'Svensson', NULL);
 ```
 
-## 4. Visa alla studenter
+## 4. Display All Students
 
 ```sql
 SELECT * FROM student;
 ```
 
-## 5. Förväntat resultat
+## 5. Expected Result
 
 | sid | fname | lname | comment |
 |-----|-------|-------|---------|
-| 1 | Ali | Ahmed | Bra student |
-| 2 | Sara | Karlsson | Gillar programmering |
+| 1 | Ali | Ahmed | Good student |
+| 2 | Sara | Karlsson | Enjoys programming |
 | 3 | Erik | Svensson | NULL |
 
-## 6. Förklaring
+## 6. Explanation
 
-- **sid:** Studentens unika ID och tabellens primärnyckel.
-- **fname:** Studentens förnamn, max 20 tecken.
-- **lname:** Studentens efternamn, max 20 tecken.
-- **comment:** En valfri kommentar om studenten.
-- **PRIMARY KEY:** Säkerställer att varje student har ett unikt ID.
-- **NOT NULL:** Betyder att kolumnen måste innehålla ett värde.
-- **NULL:** Betyder att ett värde kan saknas.
+- **sid:** The student's unique ID and the primary key of the table.
+- **fname:** The student's first name, with a maximum of 20 characters.
+- **lname:** The student's last name, with a maximum of 20 characters.
+- **comment:** An optional comment about the student.
+- **PRIMARY KEY:** Ensures that each student has a unique ID.
+- **NOT NULL:** Means that the column must contain a value.
+- **NULL:** Means that a value can be missing.
 
-## Slutsats
+## Conclusion
 
-I denna övning har vi:
-- Skapat en databas som heter `studenter`.
-- Skapat en tabell som heter `student`.
-- Definierat en primärnyckel och obligatoriska fält.
-- Lagt till tre studenter.
-- Hämtat alla studenter med `SELECT`.
+In this exercise, we have:
+- Created a database named `studenter`.
+- Created a table named `student`.
+- Defined a primary key and required fields.
+- Inserted three students into the table.
+- Retrieved all students using the `SELECT` statement.
